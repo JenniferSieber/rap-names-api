@@ -1,6 +1,6 @@
-const express = require('express')
-const app = express()
-const PORT = 8000
+const express = require('express');
+const app = express();
+const PORT = 8000;
 
 let rappers = {
   '21 savage': {
@@ -43,7 +43,7 @@ let rappers = {
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + 'index.html')
-})
+});
 
 app.get('/api/:name', (req, res) => {
   const rapperName = req.params.name.toLowerCase();
@@ -52,8 +52,8 @@ app.get('/api/:name', (req, res) => {
   } else {
     res.json(rappers['unknown'])
   }
-})
+});
 
 app.listen(PORT, () => {
-  console.log(`${PORT} port is working. Servers make the best Partners because they know how to Listen!Betta get the Catch!`)
-})
+  console.log(`${PORT} port is working. Servers make the best Partners because they know how to Listen! Betta get the Catch!`)
+});
